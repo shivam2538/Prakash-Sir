@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPCS Global Flyer</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+            100% {
+                transform: translateY(0px);
+            }
+        }
+        
+        .float {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes bounce {
+            0%,
+            20%,
+            50%,
+            80%,
+            100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-30px);
+            }
+            60% {
+                transform: translateY(-15px);
+            }
+        }
+        
+        .animate-bounce {
+            animation: bounce 2s infinite;
+        }
+        
+        .word-art {
+            font-size: 4rem;
+            font-weight: bold;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            background: linear-gradient(45deg, #ff6b6b, #f06595, #cc5de8, #845ef7, #5c7cfa, #339af0, #22b8cf, #20c997, #51cf66, #94d82d, #fcc419, #ff922b);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            animation: bounce 2s infinite;
+        }
+        
+        .logo {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 100px;
+            height: auto;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 flex justify-center items-center min-h-screen relative">
+    <img src="Ipcs.jpeg" alt="Logo" class="logo">
+    <div class="container flex items-center justify-center space-x-8 p-8 bg-white rounded-lg shadow-lg relative">
+        <img src="Girl.webp" alt="Girl" class="w-80 h-auto rounded-lg shadow-lg transform transition duration-500 hover:scale-105 float">
+        <div class="flyer bg-gradient-to-b from-green-500 to-white p-10 rounded-lg text-center shadow-lg">
+            <div class="title word-art mb-4">Your Future Starts Here!!</div>
+            <div class="subtitle text-xl font-bold text-gray-800 mb-4">Ready to make your dream <span class="text-green-600">CAREER?</span></div>
+            <ul class="programs space-y-4">
+                <li class="bg-green-700 text-white p-4 rounded-lg flex justify-between items-center">
+                    AI Integrated Digital Marketing
+                    <button onclick="enquireNow('AI Integrated Digital Marketing')" class="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition duration-300 transform hover:scale-110">Enquire Now</button>
+                </li>
+                <li class="bg-green-700 text-white p-4 rounded-lg flex justify-between items-center">
+                    Industrial Automation
+                    <button onclick="enquireNow('Industrial Automation')" class="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition duration-300 transform hover:scale-110">Enquire Now</button>
+                </li>
+                <li class="bg-green-700 text-white p-4 rounded-lg flex justify-between items-center">
+                    Software Testing
+                    <button onclick="enquireNow('Software Testing')" class="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition duration-300 transform hover:scale-110">Enquire Now</button>
+                </li>
+                <li class="bg-green-700 text-white p-4 rounded-lg flex justify-between items-center">
+                    Python & Data Science
+                    <button onclick="enquireNow('Python & Data Science')" class="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition duration-300 transform hover:scale-110">Enquire Now</button>
+                </li>
+                <li class="bg-green-700 text-white p-4 rounded-lg flex justify-between items-center">
+                    Data Analytics
+                    <button onclick="enquireNow('Data Analytics')" class="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition duration-300 transform hover:scale-110">Enquire Now</button>
+                </li>
+                <li class="bg-green-700 text-white p-4 rounded-lg flex justify-between items-center">
+                    BMS & CCTV
+                    <button onclick="enquireNow('BMS & CCTV')" class="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition duration-300 transform hover:scale-110">Enquire Now</button>
+                </li>
+                <li class="bg-green-700 text-white p-4 rounded-lg flex justify-between items-center">
+                    Artificial Intelligence
+                    <button onclick="enquireNow('Artificial Intelligence')" class="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition duration-300 transform hover:scale-110">Enquire Now</button>
+                </li>
+                <li class="bg-green-700 text-white p-4 rounded-lg flex justify-between items-center">
+                    Embedded & IoT
+                    <button onclick="enquireNow('Embedded & IoT')" class="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition duration-300 transform hover:scale-110">Enquire Now</button>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        function enquireNow(course) {
+            const whatsappNumber = '919008726664';
+            const message = `I am interested in ${course}`;
+            const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+            window.open(url, '_blank');
+        }
+    </script>
+</body>
+
+</html>
